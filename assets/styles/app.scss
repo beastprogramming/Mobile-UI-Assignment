@@ -1,0 +1,857 @@
+
+//Fonts
+$font-body: 'Poppins', sans-serif;
+$font-headings: 'Poppins', sans-serif;
+
+//Custom Colors
+$color-darkergray: #2a2a2a;
+$color-gray: #b3b3b3;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-red: #cf1915;
+$color-green: #8dc63f;
+$color-purple: #637fff;
+$color-lighterblue: #f4f9fd;
+$color-teal:#0bccb1;
+
+// Padding
+$content-header-padding: 15px 40px;
+
+
+
+//Gradients
+.gradient-green{
+	background: linear-gradient(60deg, #42d4be 0%, #a0eb67 100%);
+}
+.gradient-red{
+	background: linear-gradient(60deg, #f10673 0%, #fe5903 100%);
+}
+.gradient-blue{
+	background: linear-gradient(60deg, #00c2ff 0%, #00c2ff 100%);
+}
+
+// Custom Font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
+
+
+// Css Reset
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+:focus {
+	outline: 0;
+}
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+.clearfix{
+	display: block;
+}
+.none {
+	display: none;
+}
+.container{
+	max-width: 1320px;
+	margin:0px 180px;
+}
+// Header Styling
+header{
+	background: $color-white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+	padding:15px 0px;
+}
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo{
+	font-size:20px;
+	font-weight: 700;
+	text-decoration: none;
+	color: $color-black;
+	font-family: $font-body;
+	letter-spacing: 0.1em;
+}
+nav ul.menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: $font-body;
+
+}
+nav ul.menu li a {
+	font-size: 16px;
+	font-weight:600;
+	margin-left: 20px;
+	text-decoration: none;
+	color: $color-black;
+}
+nav ul.menu li a:hover {
+	color: $color-darkergray;
+}
+// Breadcrumb
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	font-size:15px;;
+	font-weight: 500;
+	font-family: $font-body;
+	margin:10px 0;
+}
+.breadcrumb a {
+	text-decoration: none;
+	color: $color-black;
+
+}
+.breadcrumb span {
+	color: $color-gray;
+}
+// Phone Overview
+.phone-overview-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	background: $color-white;
+	padding:20px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+}
+.phone-overview-grid .overview-cols-1 {
+	grid-column: 1;
+}
+.overview-cols-1 .phone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.overview-cols-1 .phone img{
+	margin-bottom: 20px;
+}
+.overview-cols-1 .phone label{
+	font-size:14px;
+	font-family: $font-body;
+	border: 1px solid $color-darkergray;
+	display: flex;
+	align-items: center;
+}
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+	cursor: pointer;
+	color: currentColor;
+	width: 1.20em;
+	height: 1.20em;
+	border-right: 1px solid currentColor;
+	margin-right: 2px;
+}
+input[type="checkbox"]::before {
+	content: "";
+	width: 1.15em;
+	height: 1.20em;
+	display:flex;
+	transition: 120ms transform ease-in-out;
+	background: $color-white;
+  }
+
+  input[type="checkbox"]:checked::before {
+	background: $color-teal;
+	content: '';
+  }
+
+.phone-overview-grid .overview-cols-3 {
+	grid-column: 2/5;
+}
+// Title And Ratings
+.overview-title-ratings {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.overview-title{
+	font-size:24px;
+	font-weight:700;
+	font-family: $font-body;
+	margin-bottom: 15px;
+}
+.star-ratings {
+	display:flex;
+	align-items: center;
+}
+.star-ratings .rating-number {
+	font-size: 20px;
+	color: $color-gray;
+	font-family: $font-body;
+	margin-right: 10px;
+}
+.star-ratings img {
+	width:25px;
+	margin-right: 10px;
+
+}
+.os-version{
+	font-family: $font-body;
+	font-size: 14px;
+	background: $color-lighterblue;
+	padding: 5px 10px;
+}
+.overview-rating {
+	display: flex;
+	align-items:flex-end;
+}
+.rating-meter {
+	margin-right: 20px;
+
+}
+.overview-rating .rating-title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+.overview-rating .rating-title p {
+	font-family: $font-body;
+	font-size: 14px;
+	font-weight: 500;
+	color: $color-gray;
+	margin-right: 10px;
+}
+.rating-badge{
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	color: $color-white;
+	font-family: $font-body;
+}
+.badge-number{
+	background-color: $color-teal;
+	padding: 5px;
+}
+.badge-text{
+	background-color: $color-purple;
+	padding: 5px;
+
+}
+// Colors
+.colors {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+
+}
+.colors div {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+// Price and Shop Button
+.price-shop-button{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.price-shop-button .price{
+	font-family: $font-body;
+	font-size: 24px;
+	color: $color-purple;
+	margin-right: 20px;
+	font-weight: 600;
+}
+.btn{
+	border-radius: 50px;
+	padding: 20px 50px;
+}
+.btn-shop{
+	background: $color-purple;
+	color: $color-white;
+	font-size: 16px;
+	font-weight: 700;
+	text-decoration: none;
+	font-family: $font-body;
+}
+// Product Overview Specs
+.product-overview-specs {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	font-family: $font-body;
+	width: 100%;
+	margin-top:20px;
+}
+.product-overview-specs img{
+	margin-bottom: 20px;
+}
+.product-overview-specs .product-spec{
+	font-size: 22px;
+	color: $color-gray;
+	margin-bottom: 15px;
+}
+.product-overview-specs .product-review{
+	font-size: 18px;
+	color: $color-gray;
+}
+.divider{
+	margin: 30px 0;
+}
+// Product Operators
+.product-operators {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.product-operators .operator-logo {
+	margin-bottom: 20px;
+	height: 30px
+}
+.product-operators .operator-price {
+	font-family:$font-body;
+	font-size: 16px;
+	font-weight: 500;
+	color: $color-gray;
+}
+
+
+// Phone Specification
+.phone-specification-tabs{
+	display:grid;
+	grid-template-columns: repeat(9, 1fr);
+	margin-bottom: 40px;
+}
+.tablinks{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+	padding:10px;
+	text-decoration:none;
+	color: $color-teal;
+	background-color: $color-lighterblue;
+}
+.tab-active, .tablinks:hover{
+	background-color: $color-purple;
+	color:$color-white;
+}
+.tab-active img, .tablinks:hover > .specification-icon{
+	filter: brightness(100);
+}
+.specification-icon {
+	margin-bottom:5px;
+	height: 20px;
+	width: auto;
+}
+.specification-title{
+	font-size: 14px;
+	font-family: $font-body;
+}
+// Phone Specification Details
+.phone-specification-details{
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+	margin-bottom: 40px;
+}
+.phone-specification-tab-content{
+	grid-column: 1/3;
+	background-color:$color-white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+	width:100%;
+}
+.specification-content-header{
+	background-color: $color-lighterblue;
+	padding: $content-header-padding;
+	display:flex;
+	align-items: center;
+}
+.flex{
+	display:flex;
+}
+.items-center{
+	align-items: center;
+}
+.justify-between{
+	justify-content: space-between;
+}
+.specification-content-header img{
+	margin-right:10px;
+	height: 20px;
+	width: auto;
+}
+.specification-content-header p{
+	font-size: 16px;
+	font-family: $font-body;
+	font-weight: 700;
+}
+// Specification Detail Content Body
+.specification-content .specification-content-body{
+	background-color: $color-white;
+	padding: 20px 40px;;
+}
+.specification-content-body table{
+	width: 100%;
+}
+.specification-content-body table tr td {
+	padding: 20px 0;
+	font-family: $font-body;
+}
+.specification-content-body table tr td.feature-title {
+	width: 40%;
+	font-weight: 700;
+	color: $color-black;
+	font-size:16px
+}
+.specification-content-body table tr td.feature-value {
+	width: 60%;
+	color: $color-gray;
+	font-size:17px
+}
+// Sidebar Ad
+.sidebar-ad{
+	background-color:$color-white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+	padding:25px;
+	margin-bottom:25px;
+}
+.sidebar-ad img{
+	width:100%;
+}
+// Related Product
+.related-products{
+	background-color: $color-white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+}
+// Related Product Header
+.related-product-header {
+	padding: 20px;
+	border-bottom: 1px solid rgba(0,0,0, 0.10);
+}
+.related-product-header p {
+	font-size: 18px;
+	font-family: $font-body;
+	font-weight: 700;
+}
+// Related Product body
+.related-product-body {
+	padding: 20px;
+	border-bottom: 1px solid rgba(0,0,0, 0.10);
+	font-family: $font-body;
+
+}
+.related-product {
+	display: flex;
+	align-items:flex-start;
+	margin-bottom: 25px;
+}
+.related-product img {
+	margin-right: 15px;
+}
+.related-product-name {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.related-product-price {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	color: $color-purple;
+}
+.related-product-rating {
+	font-size: 16px;
+	color: $color-gray;
+}
+.related-product-rating img{
+	width: 18px;
+	
+}
+// Product Reviews
+.phone-reviews{
+	background: $color-white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+	width:100%;
+	font-family: $font-body;
+	margin-bottom: 40px;
+}
+.reviews-filter p{
+	font-size:14px;
+	color: $color-gray;
+	font-weight: 600;
+	margin-right: 20px;
+}
+.reviews-filter select{
+	padding: 5px;
+}
+// Review Tags
+.review-tags{
+	display: flex;
+	align-items: center;
+	padding: $content-header-padding;
+	margin-bottom:20px;
+}
+.review-tags .tag{
+	border:1px solid $color-gray;
+	padding: 5px;
+	margin-right:10px;
+	font-size: 12px;
+	font-weight: 500;
+	font-family: $font-body;
+	color:$color-gray;
+	cursor: pointer;
+}
+.review-tags .tag:hover{
+	background-color: $color-lighterblue;
+}
+.review-tags .tag:last-of-type{
+	margin-right:0;
+}
+// Reviews
+.reviews-wrapper{
+	padding: 0 40px 20px 40px;
+}
+.reviews .heading{
+	margin-bottom: 20px;
+}
+.reviews .heading img{
+	width:16px;
+	margin-right: 10px;
+}
+.reviews .heading p{
+	font-size:14px;
+	font-weight: 700;
+}
+// Reviews Rating and Comment
+.review-meta{
+	margin-bottom:10px;
+}
+.reviews .review-rating {
+	font-size: 14px;
+	color: $color-gray;
+	margin-right: 10px;
+	font-weight: 500;
+}
+.reviews .review-date {
+	font-size: 12px;
+	font-weight: 500;
+	color: $color-gray;
+}
+.reviews .review-rating + img {
+	width: 16px;
+	margin-right: 10px;
+}
+// Review text
+.review-text {
+	font-size:14px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.review-name {
+	font-size:12px;
+	margin-bottom: 25px;
+	color: $color-gray;
+	font-weight: 500;
+}
+// Compare
+
+.phone-compare{
+	background-color:$color-white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+	margin-bottom: 40px;
+}
+.compare-wrapper{
+	padding: 0 40px 20px 40px;
+	margin-top:20px;
+	width: 70%
+}
+.compare-grid{
+	display:flex;
+	align-items:center;
+	margin-bottom:20px;
+}
+.compare{
+	margin-bottom: 40px;
+}
+.compare:last-of-type{
+	margin-bottom: 0px;
+}
+.compare-grid p:not(.compare-title){
+	font-family: $font-body;
+	font-size:16px;
+	color: $color-gray;
+	text-align: right;
+	width: 20%;
+	margin-right:30px;
+}
+.compare-title{
+	font-family: $font-body;
+	font-size: 16px;
+	font-weight: 700;
+	display:flex;
+	justify-content: center;
+	width: 100%;
+
+}
+.compare-meter{
+	background-color: $color-lighterblue;
+	height:30px;
+	width: 70%;
+}
+.compare-meter div{
+	height:30px;
+}
+// Footer
+footer {
+	background-color: $color-darkergray;
+	padding-top:30px;
+	color: $color-gray;
+	font-family: $font-body;
+	letter-spacing: 0.025em;
+	line-height: 1.625;
+}
+footer a{
+	color: $color-gray;
+	text-decoration: none;
+}
+footer a:hover{
+	text-decoration: underline;
+}
+.footer-wrapper{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap:2rem;
+}
+.footer-title{
+	font-size: 1.5em;
+	font-family: $font-body;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.footer-title.logo{
+	color: $color-gray;
+
+}
+.social-icon{
+	display: flex;
+	margin-top: 10px;
+}
+.social-icon img{
+	margin-right: 10px;
+	height:20px;
+}
+
+footer p{
+	font-size:14px;
+}
+
+.tweet-date{
+	font-size: 12px;
+}
+.feeds-grid{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:0.5rem;
+}
+.feeds-grid img{
+	width: 100%;
+}
+
+// Responsive using media query
+@media (max-width: 768px) {
+	.overview-title-ratings{
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+	.product-overview-specs{
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem
+	}
+	.overview-title{
+		text-align: center;
+	}
+	.product-operators{
+		grid-template-columns: 1fr;
+	
+	}
+	.product-operators div{
+		display: flex;
+	align-items: center;
+		margin-bottom: 20px;
+	}
+	.product-operators .operator-logo{
+		margin-bottom: 0;
+		margin-right: 10px
+	}
+	footer{
+		padding: 30 10px;
+	}
+	.footer-wrapper{
+		grid-template-columns: 1fr;
+		margin: 0;
+	
+	}
+	.feeds-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.about-company, .twitter-feeds, .instagram-feeds {
+		padding: 10px;
+	}
+	.phone-specification-details .phone-specification-sidebar {
+		grid-template-columns: 1fr;
+	}
+	
+}
+@media (max-width: 1024px) {
+.container{
+	width:100%;
+}
+main.container{
+	margin: 0;
+}
+.content {
+    padding: 10px;
+}
+// header
+header{
+	display:none;
+}
+// Overview
+
+.phone-overview-grid{
+	padding:0;
+	box-shadow: none;
+}
+
+.overview-title-ratings + div {
+    width: 100%;
+}
+
+
+.product-overview-specs{
+	gap: 2rem
+}
+.phone-overview-grid {
+	grid-template-columns: 1fr;
+}
+
+.phone-overview-grid .overview-cols-3, .phone-overview-grid .overview-cols-1  {
+    padding: 10px;
+}
+
+.phone-overview-grid .overview-cols-3 {
+    grid-column: 1;
+}
+
+// Specification
+.phone-specification-tabs{
+	overflow-x: scroll;
+}
+.phone-specification-details{
+	grid-template-columns: 1fr;
+	column-gap: 0;
+}
+.specification-content-header {
+	padding: 10px;
+	line-height: 1.5;;
+}
+.specification-content .specification-content-body{
+	padding: 10px;
+}
+.specification-content-body table tr td.feature-title{
+	padding-right: 5px;
+}
+// Sidebar
+.phone-specification-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+// Reviews
+.review-tags {
+    flex-wrap: wrap;
+	padding: 10px;
+}
+.review-tags .tag{
+    margin-bottom: 10px;
+	font-size: 14px;
+}
+.reviews-wrapper {
+	padding: 10px;
+}
+// Compare
+.compare-wrapper {
+    width: 100%;
+	padding: 0;
+}
+.compare{
+	padding: 10px;
+}
+.compare-grid {
+    flex-direction: column-reverse;
+}
+.compare-grid img {
+    width: 100%;
+}
+.compare-meter{
+	width: 100%;
+}
+.compare-grid p:not(.compare-title){
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+// Footer
+
+
+
+}
+@media (max-width: 1280px) { 
+	.container {
+		margin:0;
+	}
+	nav{
+		padding: 0 10px;
+		justify-content: space-around;
+	}
+	.content{
+		padding: 10px;
+	}
+	.review-tags, .specification-content-header, .reviews-wrapper{
+		padding: 15px 20px;
+	}
+	footer {
+		padding: 30px;
+	}
+ }
